@@ -3,7 +3,7 @@
 	"description":  "Detect native Leap Motion gestures.",
 	"version":      "0.1.0",
 	"main":         "index.js",
-	"files":        ["index.js", "all-frames.js"],
+	"files":        ["index.js", "all-frames.js", "parse-gesture.js"],
 	"keywords":     ["leap", "motion", "vr", "tracking", "hand", "gesture", "tap", "swipe", "circle"],
 	"author":       "Jannis R <mail@jannisr.de>",
 	"homepage":     "https://github.com/derhuerst/leap-motion-native-gestures",

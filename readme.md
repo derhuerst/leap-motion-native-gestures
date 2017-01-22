@@ -30,10 +30,16 @@ motion()
 {
 	center: [1.0264, 215.21, 26.1393],
 	duration: 396437,
+	hands: [
+		// data from leap-motion-stream
+	],
 	handIds: [216],
 	id: 1,
 	normal: [-0.150554, -0.0080183, 0.988569],
 	pointableIds: [2161],
+	pointables: [
+		// data from leap-motion-stream
+	],
 	progress: 1.13408,
 	radius: 59.9063,
 	state: 'stop',

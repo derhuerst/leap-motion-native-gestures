@@ -6,5 +6,5 @@ const allFrames = require('./all-frames')
 
 motion()
 // .pipe(allFrames('circle'))
-.pipe(lastFrame('circle'))
+.pipe(lastFrame('swipe'))
 .on('data', console.log)

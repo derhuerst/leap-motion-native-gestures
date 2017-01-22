@@ -2,6 +2,8 @@
 
 const through = require('through2')
 
+const parseGesture = require('./parse-gesture')
+
 const allFrames = (type = null) => {
 	const cache = {}
 
@@ -10,13 +12,15 @@ const allFrames = (type = null) => {
 
 		for (let gesture of data.gestures) {
 			if (type && gesture.type !== type) continue
-			const id = gesture.id.toString()
 
-			if (gesture.state === 'start') cache[id] = [gesture]
-			else cache[id].push(gesture)
+			const id = gesture.id.toString()
+			const parsed = parseGesture(gesture, data)
+
+			if (gesture.state === 'start') cache[id] = [parsed]
+			else cache[id].push(parsed)
 
 			if (gesture.state === 'stop') {
-				this.emit(gesture.type, cache[id])
+				this.emit(parsed.type, cache[id])
 				this.push(cache[id])
 				delete cache[id]
 			}
