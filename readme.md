@@ -18,8 +18,32 @@ npm install leap-motion-native-gestures
 ## Usage
 
 ```js
-// todo
+const motion = require('leap-motion-stream')
+const gestures = require('leap-motion-native-gestures')
+
+motion()
+.pipe(gestures())
+.on('data', console.log)
 ```
+
+```js
+{
+	center: [1.0264, 215.21, 26.1393],
+	duration: 396437,
+	handIds: [216],
+	id: 1,
+	normal: [-0.150554, -0.0080183, 0.988569],
+	pointableIds: [2161],
+	progress: 1.13408,
+	radius: 59.9063,
+	state: 'stop',
+	type: 'circle'
+}
+```
+
+`gestures` will give you only the last frame of the gesture. It contains most relevant information like e.g. the speed, but **if you want all frames, use `require('leap-motion-native-gestures/all-frames')`**.
+
+**To listen only for a specific gesture, pass its type** to `gestures` or `allFrames`, respectively. Example: `gestures('swipe')`
 
 
 ## Contributing
